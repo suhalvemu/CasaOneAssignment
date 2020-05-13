@@ -117,7 +117,7 @@ class Rating(APIView):
 
         try:
             if self.request.query_params.get('pid'):
-                productObj = self.get_product_id(self.request.query_params.get('pid'))
+                productObj = get_product_id(self.request.query_params.get('pid'))
                 if productObj is None:
                     response = {'pid': 'bad product Id'}
                     return Response(response, status=status.HTTP_400_BAD_REQUEST)
@@ -150,13 +150,13 @@ class Rating(APIView):
             if 'rating' not in data:
                 return Response({'rating': 'rating is missing'}, status=status.HTTP_400_BAD_REQUEST)
 
-            productObj = self.get_product_id(data['pid'])
+            productObj = get_product_id(data['pid'])
 
             if productObj is None:
                 response = {'pid': 'bad product Id'}
                 return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
-            purchaseOrderObj = self.get_purchase_id(data['puid'])
+            purchaseOrderObj = get_purchase_id(data['puid'])
 
             if purchaseOrderObj is None:
                 response = {'pid': 'bad purchase Id'}

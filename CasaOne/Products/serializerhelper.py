@@ -1,5 +1,6 @@
 
 from .models import Product,PurchaseOrderDetails,Ratings
+import math
 
 class RatingSerialiszerHelper():
 
@@ -16,8 +17,8 @@ class RatingSerialiszerHelper():
         self.good = hashMap[3]
         self.veryGood = hashMap[4]
         self.excellent = hashMap[5]
-        total_sum = 1 * hashMap[0] + 2 * hashMap[1] \
-                    + 3 * hashMap[2] + 4 * hashMap[3] \
+        total_sum = 1 * hashMap[1] + 2 * hashMap[2] \
+                    + 3 * hashMap[3] + 4 * hashMap[4] \
                     + 5 * hashMap[5]
         total = sum(hashMap)
         RATINGS = (
@@ -29,4 +30,4 @@ class RatingSerialiszerHelper():
             (5, 'Excellent'),
         )
 
-        self.averageRatings = RATINGS[int(total_sum / total)][1]
+        self.averageRatings =str(math.floor(total_sum / total))+' out of 5'

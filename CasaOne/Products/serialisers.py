@@ -20,7 +20,6 @@ class ProductSerializer(serializers.ModelSerializer):
 class RatingSerializer(serializers.Serializer):
     productId = serializers.SerializerMethodField('get_ProductId')
     averageRatings = serializers.SerializerMethodField('get_averageRatings')
-    noRating = serializers.SerializerMethodField('get_noRating')
     poor = serializers.SerializerMethodField('get_poor')
     average = serializers.SerializerMethodField('get_average')
     good = serializers.SerializerMethodField('get_good')
