@@ -14,7 +14,7 @@ class DerivedProduct(models.Model):
     derivedProductId = models.AutoField(primary_key=True)
     key = models.CharField(max_length=250)
     value = models.CharField(max_length=250)
-    productId = models.ForeignKey(Product, models.SET_NULL, blank=True, null=True)
+    productId = models.ForeignKey(Product, models.SET_NULL, blank=True, null=True, related_name='derivedAttributes')
 
 
 class PurchaseOrder(models.Model):
