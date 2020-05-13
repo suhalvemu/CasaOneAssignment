@@ -38,22 +38,22 @@ Below are api that are developed.
 2. UpdateDerived Attribute API:
     
     
-     http://127.0.0.1:8000/products/updateattribute/
-     
-     It is an PUT request. Json Body format will be
-     {
-        "productId": 2,
-        "derivedAttributes": [
-            {
-                "key": "time to assemble",
-                "value": "45 hours"
-            },
-            {
-                "key": "speed of delivery",
-                "value": "30 minutes"
-            }
-        ]
-    }
+       http://127.0.0.1:8000/products/updateattribute/
+
+       It is an PUT request. Json Body format will be
+       {
+          "productId": 2,
+          "derivedAttributes": [
+              {
+                  "key": "time to assemble",
+                  "value": "45 hours"
+              },
+              {
+                  "key": "speed of delivery",
+                  "value": "30 minutes"
+              }
+          ]
+      }
     
  3. FetchRatingsAPI :
  
